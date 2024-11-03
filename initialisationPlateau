@@ -1,3 +1,19 @@
+#ifndef AFFICHAGE_H
+#define AFFICHAGE_H
+
+#define L 18
+#define C 18
+
+#define espaceVideH 196
+#define espaceVideV 179
+#define barriereV 221
+#define barriereH 220
+#define pion1 1
+#define pion2 2
+#define pion3 3
+#define pion4 4
+
+
 void initialisationPlateau(char tabInitial[L][C]) {
     int i,j;
     char a=65; //code ASCII lettre 'A'
