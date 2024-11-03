@@ -1,6 +1,0 @@
-void coordonneesPoint(
-
-
-struct Point {
-int x, y, z;
-}
