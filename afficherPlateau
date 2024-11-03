@@ -8,3 +8,12 @@ void afficherPlateau(char tabPlateau[L][C]) {
         printf("\n");
     }
 }
+
+void afficherinfosjoueur(){
+    
+
+
+
+
+
+}
