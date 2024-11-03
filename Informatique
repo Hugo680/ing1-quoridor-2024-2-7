@@ -1,4 +1,0 @@
-#include <stdio.h>
-int a 
-pritnf("donnez un nombre");
-scanf("%d",&a);
