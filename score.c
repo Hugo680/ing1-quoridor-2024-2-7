@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main {
+int main() {
     char filename[100];
     FILE *file;
 
@@ -12,11 +12,9 @@ int main {
     // Création du fichier
     file = fopen(filename, "w");
     if (file == NULL) {
-        perror("Erreur lors de la création du fichier");
+        perror("Erreur lors de la creation du fichier");
         return 1;
     }
-
-    printf("Le fichier '%s' a été créé avec succès.\n", filename);
 
     // Fermeture du fichier après la création
     fclose(file);
@@ -26,10 +24,7 @@ int main {
     snprintf(command, sizeof(command), "notepad %s", filename); // Remplacez "notepad" par votre éditeur favori si besoin
 
     int result = system(command); // Ouvre le fichier dans l'éditeur de texte
-    if (result == -1) {
-        perror("Erreur lors de l'ouverture du fichier");
-        return 1;
-    }
+
 
     return 0;
 }
