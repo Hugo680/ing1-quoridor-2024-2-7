@@ -17,7 +17,7 @@ int main() {
 
     // Ouverture du fichier pour l'édition
     char command[150];
-    snprintf(command, sizeof(command), "notepad %s", filename); // Remplacez "notepad" par votre éditeur favori si besoin
+    snprintf(command, sizeof(command), "notepad %s", filename);
 
     int result = system(command); // Ouvre le fichier dans l'éditeur de texte
     return 0;
