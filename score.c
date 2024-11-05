@@ -11,10 +11,6 @@ int main() {
 
     // Création du fichier
     file = fopen(filename, "w");
-    if (file == NULL) {
-        perror("Erreur lors de la creation du fichier");
-        return 1;
-    }
 
     // Fermeture du fichier après la création
     fclose(file);
@@ -24,7 +20,5 @@ int main() {
     snprintf(command, sizeof(command), "notepad %s", filename); // Remplacez "notepad" par votre éditeur favori si besoin
 
     int result = system(command); // Ouvre le fichier dans l'éditeur de texte
-
-
     return 0;
 }
