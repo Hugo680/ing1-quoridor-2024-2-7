@@ -49,6 +49,10 @@ int main() {
     
     char tabInitial[L][C];
     initialisationPlateau(tabInitial);
+    tabInitial[9][1]=pion1;
+    tabInitial[9][17]=pion2;
+    tabInitial[1][9]=pion3;
+    tabInitial[17][9]=pion4;
     afficherPlateau(tabInitial);
     return 0;
 }
