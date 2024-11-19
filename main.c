@@ -73,6 +73,47 @@ int main(void) {
     }
 }
     (FIN sous programme hasard)
+
+    (DEBUT à rajouter main du sous programme pour CalculScore :)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Score.h"
+
+int scoreFichier() {
+    char filename[100];
+    FILE *file;
+
+    // Demande à l'utilisateur de nommer le fichier
+    printf("Entrez le nom du fichier (avec l'extension, ex: fichier.txt) : ");
+    scanf("%99s", filename);
+
+    // Création du fichier
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Erreur lors de l'ouverture du fichier.\n");
+        return 1;
+    }
+
+    // Mise à jour des scores (exemple de points gagnés)
+    calculerScore(&joueur[0], 5); // Alice gagne 5 points
+    calculerScore(&joueur[1], 2); // Bob gagne 2 points
+
+    // Sauvegarde des scores dans le fichier
+    sauvegarderScoreDansFichier(file, joueur, 2);
+
+    // Fermeture du fichier après la création
+    fclose(file);
+
+    // Ouverture du fichier pour l'édition
+    char command[150];
+    snprintf(command, sizeof(command), "notepad %s", filename);
+    int result = system(command); // Ouvre le fichier dans l'éditeur de texte
+
+}
+    (FIN sous programme CalculScore)
+
+    
     return 0;
 }
 
