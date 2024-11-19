@@ -54,6 +54,25 @@ int main() {
     tabInitial[1][9]=pion3;
     tabInitial[17][9]=pion4;
     afficherPlateau(tabInitial);
+
+    (DEBUT à rajouter main du sous programme pour tirer au hasard le 1er joueur:)
+    #include <stdio.h>
+    #include "hasard.h"
+
+int main(void) {
+    int nombreJoueurs;
+    printf("Selectionner le nombre de joueurs:\n");//demande à l'utilisateur de saisir le nombre de joueurs
+    scanf("%d", &nombreJoueurs);
+
+    if (nombreJoueurs == 2 || nombreJoueurs == 4) {
+        int premierJoueur = choisirPremierJoueur(nombreJoueurs);//Fonction qui determine le joueur choisi au hasard
+        printf("Le premier joueur sera %d", premierJoueur);//affichage du joueur choisi au hasard
+    } else {
+        printf("Le nombre de joueurs n'est pas valide, veuillez choisir 2 ou 4");
+        //Affiche que le programme ne marche pas si le nombre de joueur de joueur est ni de 2 ou 4
+    }
+}
+    (FIN sous programme hasard)
     return 0;
 }
 
