@@ -1,24 +1,13 @@
+#include "Score.h"
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    char filename[100];
-    FILE *file;
+void calculerScore(Joueur *joueur, int pointsGagnes) {
+    joueur->score += pointsGagnes;
+    printf("Score mis à jour pour %s : %d points\n", joueur->pseudo, joueur->score);
+}
 
-    // Demande à l'utilisateur de nommer le fichier
-    printf("Entrez le nom du fichier (avec l'extension, ex: fichier.txt) : ");
-    scanf("%99s", filename);
-
-    // Création du fichier
-    file = fopen(filename, "w");
-
-    // Fermeture du fichier après la création
-    fclose(file);
-
-    // Ouverture du fichier pour l'édition
-    char command[150];
-    snprintf(command, sizeof(command), "notepad %s", filename);
-
-    int result = system(command); // Ouvre le fichier dans l'éditeur de texte
-    return 0;
+void sauvegarderScoreDansFichier(FILE *file, Joueur *joueurs, int nombreJoueurs) {
+    for (int i = 0; i < nombreJoueurs; i++) {
+        fprintf(file, "Pseudo : %s, Score : %d\n", joueurs[i].pseudo, joueurs[i].score);
+    }
 }
