@@ -26,6 +26,7 @@ int main() {
         switch (choix) {
             case 1:
                 //Sous-programmes nouvellePartie();
+                nouvellePartie()
                 break;
             case 2:
                 //Sous-programmes reprendrePartie();
