@@ -7,6 +7,8 @@
 #define L 18
 #define C 18
 
+void calculerScore(Joueur *joueur, int pointsGagnes);
+void sauvegarderScoreDansFichier(FILE *file, Joueur *joueurs, int m);
 void sauvegarderPartie(Joueur joueurs[], int m, char plateau[C][L]);
 void afficherAide();
 void infosPrep();
