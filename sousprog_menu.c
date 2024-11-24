@@ -8,6 +8,17 @@
 #include "affichage.h"
 #include "joueurs.h"
 
+void calculerScore(Joueur *joueur, int pointsGagnes) {
+    joueur->score += pointsGagnes;
+    printf("Score mis à jour pour %s : %d points\n", joueur->pseudo, joueur->score);
+}
+
+void sauvegarderScoreDansFichier(FILE *file, Joueur *joueurs, int m) {
+    for (int i = 0; i < m; i++) {
+        fprintf(file, "Pseudo : %s, Score : %d\n", joueurs[i].pseudo, joueurs[i].score);
+    }
+}
+
 void quitterJeu() {
     int s;
     printf ("Etes-vous sur de vouloir quitter? Si oui tapez 1 sinon tapez 0 :\n");
