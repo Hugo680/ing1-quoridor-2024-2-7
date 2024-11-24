@@ -39,6 +39,7 @@ int main() {
                 break;
             case 5:
                 //Sous-programmes quitterJeu();
+                quitterJeu()
                 break;
             default:
                 printf("Choix invalide, veuillez réessayer.\n");
