@@ -37,6 +37,7 @@ int main() {
                 break;
             case 4:
                 //Sous-programmes afficherScores();
+                calculerScore(Joueur *joueur, int pointsGagnes)
                 break;
             case 5:
                 //Sous-programmes quitterJeu();
