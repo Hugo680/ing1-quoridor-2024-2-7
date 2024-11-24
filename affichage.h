@@ -1,3 +1,7 @@
+//
+// Created by lily on 02/11/2024.
+//
+
 #ifndef AFFICHAGE_H
 #define AFFICHAGE_H
 
@@ -16,10 +20,6 @@
 void initialisationPlateau(char tabInitial[L][C]);
 void afficherPlateau(char tabPlateau[L][C]);
 void afficherInfosJoueur();
-int scoreFichier();
-void menuJoueurs();
-void deplacements();
-void placerBarriere();
 
 
 
