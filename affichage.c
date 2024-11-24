@@ -111,6 +111,7 @@ void menuJoueurs() {
                     break;
             case 4:
                 //Sous-programmes interrompre et la Quitter
+                quitterJeu()
                     break;
         }
         if(choix1>4||choix1<1) {
