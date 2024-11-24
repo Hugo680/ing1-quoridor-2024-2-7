@@ -33,6 +33,7 @@ int main() {
                 break;
             case 3:
                 //Sous-programmes afficherAide();
+                afficherAide()
                 break;
             case 4:
                 //Sous-programmes afficherScores();
