@@ -76,3 +76,25 @@ void sauvegarderPartie(Joueur joueurs[], int m, char plateau[C][L]) {
     fclose(fichier);  // Ferme le fichier après l'écriture
     printf("Partie sauvegardee avec succes !\n");
 }
+
+void afficherAide() {
+    printf("*************************************************\n");
+    printf("             Regles du jeu Quoridor            \n");
+    printf("*************************************************\n");
+    printf("Le but du jeu est d'etre le premier a atteindre \n");
+    printf("la ligne opposee de son cote du plateau, tout en \n");
+    printf("bloquant les autres joueurs a l'aide de barrieres.\n\n");
+    printf("1. Chaque joueur commence sur la ligne centrale. \n");
+    printf("2. Un joueur peut deplacer son pion d'une case vers \n");
+    printf("   le haut, le bas, la gauche ou la droite.\n");
+    printf("3. A chaque tour, un joueur peut soit deplacer son \n");
+    printf("   pion, soit poser une barriere.\n");
+    printf("4. Une barriere bloque une case, mais elle ne peut \n");
+    printf("   pas etre placee sur une case deja occupee par un \n");
+    printf("   joueur ou une autre barriere.\n");
+    printf("5. Un joueur perd la partie si son pion est bloque \n");
+    printf("   par les barrieres et ne peut plus avancer.\n\n");
+    printf("*************************************************\n");
+    printf("     Bonne chance et amusez-vous bien !\n");
+    printf("*************************************************\n");
+}
