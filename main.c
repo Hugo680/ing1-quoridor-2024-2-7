@@ -112,7 +112,24 @@ int scoreFichier() {
 
 }
     (FIN sous programme CalculScore)
+        
+//a rajouter dans le main principal, pour joueurs.c et joueurs.h
+    // Demander à l'utilisateur de choisir le nombre de joueurs (2 ou 4)
+    do {
+        printf("Entrez le nombre de joueurs (2 ou 4) : ");
+        scanf("%d", &m);
+    } while (m != 2 && m != 4);  // Boucle tant que l'entrée n'est pas 2 ou 4
 
+    // Initialisation des joueurs
+    declarationJoueur(joueurs, m);
+
+    // Affichage des informations des joueurs
+    int n=0;
+    fflush(stdin);
+    printf("Entrer le numero du joueur dont vous voulez afficher les informations :\n ");
+    scanf("%d", &n);
+    afficherJoueur(joueurs[n-1]);
+// fin de ce qu'il faut rajouter pour joueurs.c et joueurs.h
     
     return 0;
 }
