@@ -50,7 +50,7 @@ void nouvellePartie() {
     afficherPlateau(tabInitial);
 }
 
-void sauvegarderPartie(Joueur joueurs[], int nbJoueurs, char plateau[TAILLE_PLATEAU][TAILLE_PLATEAU]) {
+void sauvegarderPartie(Joueur joueurs[], int m, char plateau[C][L]) {
     FILE *fichier = fopen("sauvegarde_partie.txt", "w");  // Ouvre le fichier en mode écriture
     if (fichier == NULL) {
         printf("Erreur lors de l'ouverture du fichier de sauvegarde.\n");
@@ -58,17 +58,17 @@ void sauvegarderPartie(Joueur joueurs[], int nbJoueurs, char plateau[TAILLE_PLAT
     }
 
     // Sauvegarder le nombre de joueurs
-    fprintf(fichier, "%d\n", nbJoueurs);
+    fprintf(fichier, "%d\n", m);
 
     // Sauvegarder les informations de chaque joueur
-    for (int i = 0; i < nbJoueurs; i++) {
-        fprintf(fichier, "%s %d %d %d\n", joueurs[i].nom, joueurs[i].position[0], joueurs[i].position[1], joueurs[i].nbBarrieres);
+    for (int i = 0; i < m; i++) {
+        fprintf(fichier, "%s %d %d %d\n", joueurs[i].pseudo, joueurs[i].position[0], joueurs[i].position[1], joueurs[i].nbBarrieres);
     }
 
     // Sauvegarder l'état du plateau
-    for (int i = 0; i < TAILLE_PLATEAU; i++) {
-        for (int j = 0; j < TAILLE_PLATEAU; j++) {
-            fprintf(fichier, "%c", plateau[i][j]);
+    for (int i = 0; i < C; i++) {
+        for (int j = 0; j < L; j++) {
+            fprintf(fichier, "%c", tabPlateau[i][j]);
         }
         fprintf(fichier, "\n");
     }
