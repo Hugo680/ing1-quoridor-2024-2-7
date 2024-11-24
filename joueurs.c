@@ -16,6 +16,7 @@ void initialiserJoueur(struct Joueur *joueurs, int num) {
     int d=0;
     printf("Entrez le numero de pion du joueur %d (ex: 1 ou 2...) : ", num);
     scanf(" %d", &d);
+    //attribuer au joueur le pion de son choix
     if (d==1) {
         joueurs->pion=pion1;
     }
