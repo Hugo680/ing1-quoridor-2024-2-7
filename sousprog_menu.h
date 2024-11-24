@@ -8,7 +8,7 @@
 #define C 18
 
 void sauvegarderPartie(Joueur joueurs[], int m, char plateau[C][L]);
-
+void afficherAide();
 void infosPrep();
 void quitterJeu();
 void nouvellePartie();
