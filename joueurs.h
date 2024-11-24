@@ -14,6 +14,7 @@ struct Joueur {
     char pion;//pion du joueur
     int score;//score du joueur
     int nbBarriere;//nombre de barrière du joueur
+    int position[2];//position du joueur
 };
 
 void initialiserJoueur(struct Joueur *joueurs, int num);
