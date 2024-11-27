@@ -1,4 +1,10 @@
 #include <stdio.h>
+#include "affichage.h"
+#include "hasard.h"
+#include "sousMenu.h"
+#include "joueurs.h"
+#include "barriere.h"
+#include "deplacements.h"
 #include <stdlib.h>
 #include <time.h>
 
