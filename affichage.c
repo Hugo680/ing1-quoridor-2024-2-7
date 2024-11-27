@@ -1,8 +1,7 @@
-//
-// Created by lily on 02/11/2024.
-//
 #include <stdio.h>
 #include "affichage.h"
+#include "deplacements.h"
+#include "barriere.h"
 
 void initialisationPlateau(char tabInitial[L][C]) {
     int i,j;
@@ -32,13 +31,13 @@ void initialisationPlateau(char tabInitial[L][C]) {
             else {
                 if (j%2==0) {
                     if (i%2!=0) {
-                        tabInitial[i][j] = espaceVideH;
+                        tabInitial[i][j] = barriereH;
                     } else {
                         tabInitial[i][j] = ' ';
                     }
                 } else {
                     if (i%2==0) {
-                        tabInitial[i][j] = espaceVideV;
+                        tabInitial[i][j] = barriereV;
                     } else {
                         tabInitial[i][j] = ' ';
                     }
@@ -61,9 +60,11 @@ void afficherPlateau(char tabPlateau[L][C]) {
 
 #include <stdio.h>
 #include <stdlib.h>
+
 int scoreFichier() {
     char filename[100];
     FILE *file;
+
     // Demande à l'utilisateur de nommer le fichier
     printf("Entrez le nom du fichier (avec l'extension, ex: fichier.txt) : ");
     scanf("%99s", filename);
@@ -74,16 +75,15 @@ int scoreFichier() {
     // Fermeture du fichier après la création
     fclose(file);
 
-void afficherInfosJoueur() {
     // Ouverture du fichier pour l'édition
     char command[150];
     snprintf(command, sizeof(command), "notepad %s", filename); //Ouvre le fichier avec Notepad
+
      int result = system(command); // Ouvre le fichier dans l'éditeur de texte
     return 0;
 }
 
-}
-void menuJoueurs() {
+void menuJoueurs1() {
     int choix1;
     do {
         printf("\n");
@@ -94,21 +94,25 @@ void menuJoueurs() {
         printf("3. Passer ton tour\n");
         printf("4. Interrompre la partie et la Quitter\n");
         printf("Entrez votre choix : ");
+
         // Récupération du choix de l'utilisateur
         scanf("%d", &choix1);
         // Gestion du choix de l'utilisateur
         switch (choix1) {
             case 1:
                 //Sous-programme déplacements
+                    deplacement1();
                     break;
             case 2:
                 //Sous-programmes placements barrières
+                    barrieres1();
                     break;
             case 3:
                 //Sous-programmes passer son tour
                     break;
             case 4:
                 //Sous-programmes interrompre et la Quitter
+                    quitterJeu();
                     break;
         }
         if(choix1>4||choix1<1) {
@@ -116,31 +120,117 @@ void menuJoueurs() {
         }
     }while(choix1>5||choix1<1);
 }
-void deplacements()
-{
-    int choix2;
-    printf("\n");
-        printf("Pour les deplacements, tu peux :\n");
-        printf("1. Aller en Haut\n");
-        printf("2. Aller en Bas\n");
-        printf("3. Aller à Droite\n");
-        printf("4. Passer à Gauche\n");
+
+void menuJoueurs2() {
+    int choix1;
+    do {
+        printf("\n");
+        printf("C'est a toi, (pseudo)\n");
+        printf("Tu as le choix entre differentes actions : \n");
+        printf("1. Te deplacer\n");
+        printf("2. Placer une barriere\n");
+        printf("3. Passer ton tour\n");
+        printf("4. Interrompre la partie et la Quitter\n");
         printf("Entrez votre choix : ");
-    // Récupération du choix de l'utilisateur
-        scanf("%d", &choix2);
-    // Gestion du choix de l'utilisateur
-        switch (choix2) {
+
+        // Récupération du choix de l'utilisateur
+        scanf("%d", &choix1);
+        // Gestion du choix de l'utilisateur
+        switch (choix1) {
             case 1:
                 //Sous-programme déplacements
-                break;
+                    deplacement2();
+                    break;
             case 2:
                 //Sous-programmes placements barrières
-                break;
+                    barrieres2();
+                    break;
             case 3:
                 //Sous-programmes passer son tour
-                break;
+                    break;
             case 4:
                 //Sous-programmes interrompre et la Quitter
-                break;
+                    quitterJeu();
+                    break;
         }
+        if(choix1>4||choix1<1) {
+            printf("Choix invalide, veuillez reessayer");
+        }
+    }while(choix1>5||choix1<1);
+}
+
+void menuJoueurs3() {
+    int choix1;
+    do {
+        printf("\n");
+        printf("C'est a toi, (pseudo)\n");
+        printf("Tu as le choix entre differentes actions : \n");
+        printf("1. Te deplacer\n");
+        printf("2. Placer une barriere\n");
+        printf("3. Passer ton tour\n");
+        printf("4. Interrompre la partie et la Quitter\n");
+        printf("Entrez votre choix : ");
+
+        // Récupération du choix de l'utilisateur
+        scanf("%d", &choix1);
+        // Gestion du choix de l'utilisateur
+        switch (choix1) {
+            case 1:
+                //Sous-programme déplacements
+                    deplacement3();
+                    break;
+            case 2:
+                //Sous-programmes placements barrières
+                    barrieres3();
+                    break;
+            case 3:
+                //Sous-programmes passer son tour
+                    break;
+            case 4:
+                //Sous-programmes interrompre et la Quitter
+                    quitterJeu();
+                    break;
+        }
+        if(choix1>4||choix1<1) {
+            printf("Choix invalide, veuillez reessayer");
+        }
+    }while(choix1>5||choix1<1);
+}
+
+void menuJoueurs4() {
+    int choix1;
+    do {
+        printf("\n");
+        printf("C'est a toi, (pseudo)\n");
+        printf("Tu as le choix entre differentes actions : \n");
+        printf("1. Te deplacer\n");
+        printf("2. Placer une barriere\n");
+        printf("3. Passer ton tour\n");
+        printf("4. Interrompre la partie et la Quitter\n");
+        printf("Entrez votre choix : ");
+
+        // Récupération du choix de l'utilisateur
+        scanf("%d", &choix1);
+        // Gestion du choix de l'utilisateur
+        switch (choix1) {
+            case 1:
+                //Sous-programme déplacements
+                    deplacement4();
+                    break;
+            case 2:
+                //Sous-programmes placements barrières
+                    barrieres4();
+                    break;
+            case 3:
+                //Sous-programmes passer son tour
+                    break;
+            case 4:
+                //Sous-programmes interrompre et la Quitter
+                    quitterJeu();
+                    break;
+        }
+        if(choix1>4||choix1<1) {
+            printf("Choix invalide, veuillez reessayer");
+        }
+    }while(choix1>5||choix1<1);
 }
