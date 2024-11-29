@@ -95,3 +95,21 @@ int main() {
     }while(choix>5||choix<1);
 }
 
+
+int main() {
+    int m;
+    char tabInitial[C][L];
+    aide();
+    nouvellePartie();
+    // Affichage des informations des joueurs
+    int n=0;
+    fflush(stdin);
+    printf("Entrer le numero du joueur dont vous voulez afficher les informations :\n ");
+    scanf("%d", &n);
+    afficherJoueur(joueurs[n-1]);
+
+    //fin du en +
+    quitterJeu();
+    nouvellePartie();
+    return 0;
+
